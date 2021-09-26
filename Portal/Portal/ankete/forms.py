@@ -4,7 +4,7 @@ from django import forms
 class AnketeCreateForm(forms.ModelForm):
     class Meta:
         model = Stavka
-        fields = ["pitanja", "tekst", "glasovi"]
+        fields = ["pitanja", "glasovi"]
 
 # class AnketeCreateForm(forms.ModelForm):
     class Meta:
@@ -15,8 +15,6 @@ class AnketeCreateForm(forms.ModelForm):
         super(AnketeCreateForm, self).__init__(*args, **kwargs)
         for fieldname in ['pitanja']:
             self.fields[fieldname].label = 'Питања'
-        for fieldname in ['tekst']:
-            self.fields[fieldname].label = 'Текст'
         for fieldname in ['glasovi']:
             self.fields[fieldname].label = 'Гласови'
         for fieldname in ['pitanje']:
